@@ -4,9 +4,9 @@
 
 
  ******
- *****
- ****
- ***
+  *****
+   ****
+    ***
  *
 
 
@@ -25,7 +25,7 @@ void Pattern(int N) {
     }
 
     // Inner Loop - Star
-    for (int k = N - 1 - i; k >= 0; k--) {
+    for (int k = 2 * N - 1 - (2 * i + 1); k >= 0; k--) {
       cout << "*";
     }
 
