@@ -18,5 +18,14 @@ int main() {
     cout << *v1;
     cout << " \n";
   }
+
+  for (auto it : v) {
+    cout << it << " ";
+  }
+
+  v.erase(v.begin() + 1);
+
+  v.erase(v.begin() + 2, v.begin() + 4);
+
   return 0;
 }
