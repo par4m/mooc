@@ -12,15 +12,15 @@ using namespace std;
 void Pattern(int N) {
 
   // Outer
-  for (int i = 1; i <= N; i++) {
-
-    char c = 'A';
-    int breakpoint = (2 * i + 1) / 2;
+  for (int i = 0; i < N; i++) {
 
     // Space
     for (int k = 0; k < N - i - 1; k++) {
       cout << " ";
     }
+
+    char c = 'A';
+    int breakpoint = (2 * i + 1) / 2;
 
     // Inner chars
     for (int j = 1; j <= 2 * i + i; j++) {
