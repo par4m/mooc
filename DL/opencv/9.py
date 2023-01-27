@@ -5,12 +5,14 @@ import numpy as np
 ## Original Image
 img = cv.imread("resources/lambo.png")
 
-## Resize and Crop
+## Crop
 print(img.shape)
 
-imgResize = cv.resize(img, (1000, 500))
+imgCropped = img[0:200, 200:500]
+
 while True:
-    cv.imshow("Eroded Image", imgResize)
-    print(img.shape)
+    cv.imshow("Original Image", img)
+    cv.imshow("Cropped Image", imgCropped)
+    # print(img.shape)
     if cv.waitKey(1) & 0xFF == ord("q"):
         break
