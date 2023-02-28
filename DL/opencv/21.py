@@ -1,8 +1,20 @@
 import cv2 as cv
 import numpy as np
 
-path = "resources/shapes.png"
+path = "resources/lena.png"
 img = cv.imread(path)
+
+faceCascade = cv.CascadeClassifier(
+    "resources/haarcascade_frontalface_default.xml"
+)  # load cascade
+
+imgGray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)  # convert to black and white
+
+# find faces in the image
+faces = faceCascade.detectMultiScale(imgGray, 1.1, 4)
+
+for (x, y, w, h) in faces:
+    cv.rectangle(img, (x, y), (x + w, y + h), (255, 0, 0), 2)
 
 
 def stackImages(scale, imgArray):
@@ -53,62 +65,8 @@ def stackImages(scale, imgArray):
     return ver
 
 
-imgContour = img.copy()
-
-
-def getContours(img):
-    contours, heirarchy = cv.findContours(img, cv.RETR_EXTERNAL, cv.CHAIN_APPROX_NONE)
-    for cnt in contours:
-        area = cv.contourArea(cnt)
-        # cv.drawContours(imgContour, cnt, -1, (255, 0, 0), 3)
-        if area > 500:
-            cv.drawContours(imgContour, cnt, -1, (255, 0, 0), 3)
-            peri = cv.arcLength(cnt, True)
-            print(peri)
-            approx = cv.approxPolyDP(cnt, 0.02 * peri, True)
-            print(len(approx))
-            objCor = len(approx)
-
-            if objCor == 3:
-                objectType = "Triangle"
-            elif objCor == 4:
-                aspRatio = w / float(h)
-                if aspRatio > 0.95 and aspRatio < 1.05:
-                    objectType = "rectangle"
-                else:
-                    objectType = "Square"
-            else:
-                objectType = "Circle"
-
-            x, y, w, h = cv.boundingRect(approx)
-            cv.rectangle(imgContour, (x, y), (x + w, y + h), (0, 255, 0), 2)
-            cv.putText(
-                imgContour,
-                objectType,
-                (x + (w // 2) - 10, y + (h // 2) - 10),
-                cv.FONT_HERSHEY_COMPLEX,
-                0.7,
-                (0, 0, 0),  # color
-                2,  # font scale
-            )
-
-
-# imgContourSize = cv.resize(imgContour, (1080, 480))
-
-imgBlank = np.zeros_like(img)
-# imgResize = cv.resize(img, (640, 480))
-imgGray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
-imgBlur = cv.GaussianBlur(imgGray, (5, 5), 0)
-imgCanny = cv.Canny(imgBlur, 50, 50)
-
-getContours(imgCanny)
 while True:
-    # cv.imshow("Gray", imgGray)
-    # cv.imshow("OG", imgResize)
-    # cv.imshow("Blur", imgGray)
-    StackedImages = stackImages(
-        0.8, ([img, imgGray, imgBlur], [imgCanny, imgContour, imgBlank])
-    )
+    StackedImages = stackImages(0.8, ([img]))
     cv.imshow("Stack", StackedImages)
     if cv.waitKey(1) & 0xFF == ord("q"):
         break
