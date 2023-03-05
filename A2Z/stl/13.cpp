@@ -13,6 +13,10 @@ int main() {
   ms.insert(1);
   ms.insert(1);
   int cnt = ms.count(1);
+
+  // erase multiple
+  ms.erase(ms.find(1), ms.find(1));
+
   cout << cnt;
   return 0;
 }
