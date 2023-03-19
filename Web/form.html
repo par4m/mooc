@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <h1>HTML Forms</h1>
+
+    <form action="">
+      <label for="username">enter username: </label>
+      <input
+        type="text"
+        name=""
+        value=""
+        id="username"
+        placeholder="username"
+      />
+      <br /><br />
+      <label for="email">enter email:</label>
+      <input type="email" name="" value="" id="email" placeholder="email" />
+      <br /><br />
+      <label for="password">password: </label>
+      <input type="password" name="" value="" placeholder="password" />
+      <br /><br />
+
+      <p>Select Your Age:</p>
+      <input type="radio" name="age" value="0-25" id="option-1" />
+      <label for="option-1">0-25</label>
+      <br />
+      <input type="radio" name="age" value="26-50" id="option-2" />
+      <label for="option-2">26-50</label>
+      <br />
+      <input type="radio" name="age" value="50+" id="option-3" />
+      <label for="option-3">50+</label>
+      <br /><br />
+
+      <label for="question">Security Question</label>
+      <select name="question" id="question">
+        <option value="q1">
+          What color are your favourite pair of socks ?
+        </option>
+        <option value="q2">If you could be a vegetable, which one ?</option>
+        <option value="q3">What is your best ever security question?</option>
+      </select>
+      <br /><br />
+
+      <label for="answer">Security Question Answer: </label>
+      <input type="text" name="" value="" id="answer" />
+      <br /><br />
+      <label for="bio">Enter Your Bio:</label><br />
+      <textarea rows="" cols="" id="bio" placeholder="about you.."></textarea>
+      <br /><br />
+
+      <input type="submit" name="" value="submit the form" />
+      <br />
+    </form>
+  </body>
+</html>

@@ -1,0 +1,66 @@
+/*
+.error {
+  color: blue;
+}
+
+p.error {
+  color: green;
+}
+
+p.success {
+  color: grey;
+}
+
+p.success.feedback {
+  border: 1px dashed crimson;
+}
+
+*/
+
+/* # is Used for ID, . used for class*/
+#content {
+  background-color: #ebebeb;
+  padding: 20px;
+}
+
+div#content {
+  border: 1px dashed aqua;
+}
+
+/* Descendent Selectors*/
+div .error {
+  /* Get .error class if it is inside div*/
+  color: purple;
+}
+
+div.error {
+  /* Get .error class if it is inside div*/
+  color: magenta;
+}
+
+/* Attribute Selectors*/
+a[href] {
+  background-color: green;
+}
+
+a[href*='google'] {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: red;
+}
+a[href*='thenetninja'] {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: blue;
+}
+a[href$='.com'] {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: green;
+}
