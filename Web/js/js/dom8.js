@@ -10,5 +10,6 @@ items.forEach((item) => {
     /* console.log('item is ' + item.innerText) */
     console.log(e.target)
     console.log(item)
+    e.target.style.textDecoration = 'line-through'
   })
 })
