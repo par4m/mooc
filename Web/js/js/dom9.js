@@ -10,16 +10,21 @@ button.addEventListener('click', () => {
 
 const items = document.querySelectorAll('li')
 
-items.forEach((item) => {
-  item.addEventListener('click', (e) => {
-    /* console.log('item is ' + item.innerText) */
-    console.log('event in Li')
+/* items.forEach((item) => { */
+/*   item.addEventListener('click', (e) => { */
+/* console.log('item is ' + item.innerText) */
+/*     e.stopPropagation() */
+/*     console.log('event in Li') */
+/*     e.target.remove() */
+/*   }) */
+/* }) */
+/**/
+ul.onclick = (e) => {
+  /* console.log('event in UL') */
+  console.log(e.target)
+  if (e.target.tagName === 'LI') {
     e.target.remove()
-  })
-})
-
-ul.onclick = () => {
-  console.log('event in UL')
+  }
 }
 
 /* button.addEventListener('click', () => { }) */
