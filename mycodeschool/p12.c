@@ -5,9 +5,9 @@ int main() {
   int x = 5;
   int *p;
   p = &x;
-  printf("Address of x is %d and value of x is %d\n", p,*p);
+  printf("Address of x is %d and value of x is %d\n", p, *p);
   *p = 6;
-  // 
+  //
   int **q; // pointer to pointer
   q = &p;
   printf("Address of p is %d and value it points to is %d\n", q, **q);
