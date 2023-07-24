@@ -1,8 +1,16 @@
-import java.util.Scanner;
-import util
-public  class HelloWorld {
+public class HelloWorld {
+    public static void main( String[] args) {
+/* 
+  System.out.println("Hello World");
+  System.out.println("Hello World");
+  System.out.println("Hello World");
+  System.out.println("Hello World");
 
-public static void main(String[] args) {
- System.out.println("Hello World");
+ */
+  System.out.println("Hello World");
+  System.out.print("Hello World");
+  System.out.print("Hello World");
+  System.out.println();
+    }
+
 }
-} 
