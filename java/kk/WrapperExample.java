@@ -10,7 +10,9 @@ public class WrapperExample {
         final A kunal = new A("Kunal Kushwaha");
         kunal.name = "other name"; // allowed
         // when a non-primitve is final, u cannot reassign it
-        kunal = new A("new object"); // not allowed
+        // kunal = new A("new object"); // not allowed
+        A obj = new A("Name");
+        System.out.println(obj);
 
     }
 
@@ -28,11 +30,6 @@ class A {
 
     A(String name) {
         this.name = name;
-    }
-
-    @Override
-    protected void finalize() throws Throwable {
-        System.out.println("Object is destroyed");
     }
 
 }
