@@ -7,10 +7,18 @@ public class InnerClasses {
         public Test(String name) {
             this.name = name;
         }
+
+        @Override
+        public String toString() {
+            return name;
+        }
+
     }
 
     public static void main(String[] args) {
         Test a = new Test("Param");
         Test b = new Test("Arav");
+        System.out.println(a);
+        System.out.println(b);
     }
 }
